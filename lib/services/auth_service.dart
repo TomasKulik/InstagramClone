@@ -12,7 +12,7 @@ class AuthService {
     try {
       AuthResult authResult = await _auth.createUserWithEmailAndPassword(
         email: email.trim(),
-        password: password.trim(),
+        password: password,
       );
       FirebaseUser signedInUser = authResult.user;
       if (signedInUser != null) {
@@ -35,9 +35,13 @@ class AuthService {
   }
 
   static void login(String email, String password) async {
-    _auth.signInWithEmailAndPassword(
-      email: email.trim(),
-      password: password,
-    );
+    try {
+      await _auth.signInWithEmailAndPassword(
+        email: email.trim(),
+        password: password,
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 }
