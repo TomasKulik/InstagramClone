@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screens/feed_screen.dart';
 
 class AuthService {
   static final _auth = FirebaseAuth.instance;
@@ -23,7 +22,7 @@ class AuthService {
             'profileImageUrl': '',
           },
         );
-        Navigator.pushReplacementNamed(context, FeedScreen.id);
+        Navigator.pop(context);
       }
     } catch (e) {
       print(e);
