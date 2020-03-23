@@ -17,9 +17,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          'Instagram',
+          style: TextStyle(
+            color: Colors.black,
+            fontFamily: 'Billabong',
+            fontSize: 35.0,
+          ),
+        ),
+      ),
       backgroundColor: Colors.white,
       body: FutureBuilder(
-        future: userRef.document(widget.userId).get(),
+        future: usersRef.document(widget.userId).get(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (!snapshot.hasData) {
             return Center(

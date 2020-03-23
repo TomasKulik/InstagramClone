@@ -5,12 +5,10 @@ import 'package:instagram_clone/screens/create_post_screen.dart';
 import 'package:instagram_clone/screens/feed_screen.dart';
 import 'package:instagram_clone/screens/profile_screen.dart';
 import 'package:instagram_clone/screens/search_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:instagram_clone/models/user_data.dart';
 
 class HomeScreen extends StatefulWidget {
-  final String userId;
-
-  HomeScreen({this.userId});
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -28,17 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text(
-          'Instagram',
-          style: TextStyle(
-            color: Colors.black,
-            fontFamily: 'Billabong',
-            fontSize: 35.0,
-          ),
-        ),
-      ),
       body: PageView(
         controller: _pageController,
         children: <Widget>[
@@ -46,7 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
           SearchScreen(),
           CreatePostScreen(),
           ActivityScreen(),
-          ProfileScreen(userId: widget.userId),
+          ProfileScreen(
+              userId:
+                  Provider.of<UserData>(context, listen: false).currentUserId),
         ],
         onPageChanged: (int index) {
           setState(() {
