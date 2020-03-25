@@ -7,7 +7,7 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:instagram_clone/models/post_model.dart';
 import 'package:instagram_clone/models/user_data.dart';
-import 'package:instagram_clone/services/databese_service.dart';
+import 'package:instagram_clone/services/database_service.dart';
 import 'package:instagram_clone/services/storage_service.dart';
 import 'package:provider/provider.dart';
 

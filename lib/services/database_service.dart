@@ -23,7 +23,7 @@ class DatabaseService {
       'imageUrl': post.imageUrl,
       'caption': post.caption,
       'likes': post.likes,
-      'autotId': post.authorId,
+      'authorId': post.authorId,
       'timestamp': post.timestamp,
     });
   }

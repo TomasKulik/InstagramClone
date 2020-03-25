@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/models/user_data.dart';
 import 'package:instagram_clone/models/user_model.dart';
 import 'package:instagram_clone/screens/edit_profile_screen.dart';
-import 'package:instagram_clone/services/databese_service.dart';
+import 'package:instagram_clone/services/database_service.dart';
 import 'package:instagram_clone/utilities/constants.dart';
 import 'package:provider/provider.dart';
 
